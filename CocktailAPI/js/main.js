@@ -6,6 +6,7 @@ let currentSelection = 0;
 
 function getDrinks() {
   let drinkType = document.querySelector("input").value;
+  drinkType = drinkType.replace(" ", "_");
 
   fetch(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${drinkType}`)
     .then((res) => res.json())
